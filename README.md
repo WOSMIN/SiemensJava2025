@@ -1,23 +1,8 @@
-## Hi there 👋
-
-
 ## Siemens Java Internship - Code Refactoring Project
 
-This repository contains a Spring Boot application that implements a simple CRUD system with some asynchronous processing capabilities. The application was created by a development team in a hurry and while it implements all required features, the code quality needs significant improvement.
+I have modified the code such that now supports async operations with @EnableAsync and returns a CompletableFuture for better asynchronous workflow handling. Instead of a simple counter it uses AtomicInteger to track processed items across threads.Meanwhile there were some processing logic mistakes that have been changed to create individual futures for each item, collect them, and then wait for all completions before returning results. 
 
-## Getting Started
-- Clone this repository
-- Import the project into your IDE as a Maven project (Java 17, might work with other Java versions as well)
-- Study the existing code and identify issues
-- Implement your refactoring changes
-- Test thoroughly to ensure functionality is preserved
-
-## Your Assignment
-  The Project should have the following structure:
-
-![image](https://github.com/user-attachments/assets/ab45f225-ff1f-4ff7-bbaa-3d5d0c21e7b1)
-
-ⓘ
+## Requests
 ##  You will have to:
 1. Fix all logical errors while maintaining the same functionality
 2. Implement proper error handling and validation
@@ -31,9 +16,5 @@ This repository contains a Spring Boot application that implements a simple CRUD
       2. Track which items were processed
       3. Return a list when all items have been processed
       4. Provide an accurate list of all successfully processed items
-      HINT: You are free to modify the function and variables as much as you want :)
 
 
-Copy the project and make the solution public on your personal GitHub.
-Provide us the GitHub URL via email.
-(Don't forget to make the repository PUBLIC 😁)
